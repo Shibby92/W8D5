@@ -6,13 +6,13 @@ import java.util.Collection;
  * @author harisarifovic
  *
  */
-public class ArrayListInt <T>{
+public class ArrayListInt<T> {
 	private T[] array;
 	private int size;
 	private final int DEFAULT_SIZE = 10;
 
 	public ArrayListInt() {
-		this.array =(T[])(new Collection[DEFAULT_SIZE]);
+		this.array = (T[]) (new Object[DEFAULT_SIZE]);
 		this.size = 0;
 	}
 
@@ -65,19 +65,23 @@ public class ArrayListInt <T>{
 	 * Ako je niz pun, udvostruci mu velicinu
 	 */
 	private void resize() {
-		T[] tmp = (T[])(new Collection[this.array.length * 2]);
+		T[] tmp = (T[]) (new Object[this.array.length * 2]);
 		for (int i = 0; i < this.array.length; i++) {
 			tmp[i] = this.array[i];
 		}
 		this.array = tmp;
 	}
-/**
- * Dodaje element na specificni indeks niza
- * @param value Vrijednost koja se ubacuje
- * @param indeks Mjesto gdje nastaje izmjena
- */
+
+	/**
+	 * Dodaje element na specificni indeks niza
+	 * 
+	 * @param value
+	 *            Vrijednost koja se ubacuje
+	 * @param indeks
+	 *            Mjesto gdje nastaje izmjena
+	 */
 	public void add(T value, int indeks) {
-		T[] tmp = (T[])(new Collection[size + 1]);
+		T[] tmp = (T[]) (new Object[size + 1]);
 		int count = 0;
 		for (int i = 0; i < tmp.length; i++) {
 			if (i == indeks) {
@@ -85,7 +89,6 @@ public class ArrayListInt <T>{
 			} else {
 				tmp[i] = array[count];
 				count++;
-
 			}
 
 		}
