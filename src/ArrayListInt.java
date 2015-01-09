@@ -1,16 +1,18 @@
+import java.util.Collection;
+
 /**
  * Klasa array lista za integere
  * 
  * @author harisarifovic
  *
  */
-public class ArrayListInt {
-	private int[] array;
+public class ArrayListInt <T>{
+	private T[] array;
 	private int size;
 	private final int DEFAULT_SIZE = 10;
 
 	public ArrayListInt() {
-		this.array = new int[DEFAULT_SIZE];
+		this.array =(T[])(new Collection[DEFAULT_SIZE]);
 		this.size = 0;
 	}
 
@@ -51,7 +53,7 @@ public class ArrayListInt {
 	 * @param value
 	 *            Vrijednost koja se dodaje
 	 */
-	public void add(int value) {
+	public void add(T value) {
 		if (size == array.length) {
 			resize();
 		}
@@ -63,7 +65,7 @@ public class ArrayListInt {
 	 * Ako je niz pun, udvostruci mu velicinu
 	 */
 	private void resize() {
-		int[] tmp = new int[this.array.length * 2];
+		T[] tmp = (T[])(new Collection[this.array.length * 2]);
 		for (int i = 0; i < this.array.length; i++) {
 			tmp[i] = this.array[i];
 		}
@@ -74,8 +76,8 @@ public class ArrayListInt {
  * @param value Vrijednost koja se ubacuje
  * @param indeks Mjesto gdje nastaje izmjena
  */
-	public void add(int value, int indeks) {
-		int[] tmp = new int[size + 1];
+	public void add(T value, int indeks) {
+		T[] tmp = (T[])(new Collection[size + 1]);
 		int count = 0;
 		for (int i = 0; i < tmp.length; i++) {
 			if (i == indeks) {

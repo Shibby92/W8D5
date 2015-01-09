@@ -16,7 +16,7 @@ public class Test {
 		System.out.println(test.toString());
 		test.remove(2);
 		System.out.println(test.toString());
-		ArrayListInt test2 = new ArrayListInt();
+		ArrayListInt <Integer>test2 = new ArrayListInt<Integer>();
 		test2.add(1);
 		test2.add(3);
 		test2.add(5);
@@ -26,6 +26,11 @@ public class Test {
 		System.out.println(test2.toString());
 		test2.remove(2);
 		System.out.println(test2.toString());
+		LinkedList <Integer>test3 = new LinkedList<Integer>();
+		test3.add(1);
+		int c=24;
+		test3.add(c);
+		
 	}
 
 }
